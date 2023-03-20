@@ -83,6 +83,11 @@
         );
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
       }
+      .red {
+        color: #e1f436;
+
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -95,5 +100,31 @@
         <a href="03-promises.html">Promise generator</a>
       </li>
     </ul>
+    <div>
+      <p class="red">Dnipro:</p>
+      <p class="red" id="dnipro-clock"></p>
+    </div>
+    <div>
+      <p class="red">Los Angeles:</p>
+      <p class="red" id="los-angeles-clock"></p>
+    </div>
+    <script>
+      function updateClock() {
+        const d = new Date();
+        const dniproTime = new Date(
+          d.toLocaleString('en-US', { timeZone: 'Europe/Kiev' })
+        );
+        const losAngelesTime = new Date(
+          d.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })
+        );
+
+        document.getElementById('dnipro-clock').textContent =
+          dniproTime.toLocaleTimeString();
+        document.getElementById('los-angeles-clock').textContent =
+          losAngelesTime.toLocaleTimeString();
+      }
+
+      setInterval(updateClock, 1000);
+    </script>
   </body>
 </html>
