@@ -48,3 +48,19 @@ img {
   margin-top: 10px;
   text-align: center;
 }
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.gallery {
+  display: flex;
+  gap: 30;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.load {
+  display: none;
+}
